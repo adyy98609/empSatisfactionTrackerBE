@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Choice {
 
-    private Text text;
+    private String text;
     private String value;
 }

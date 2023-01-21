@@ -1,8 +1,9 @@
 package com.hackathon.magnite.empSatisfactionTracker.service;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.hackathon.magnite.empSatisfactionTracker.model.SurveyModel;
+import com.hackathon.magnite.empSatisfactionTracker.model.SurveyResponse;
 import com.hackathon.magnite.empSatisfactionTracker.repository.SurveyRepository;
+import com.hackathon.magnite.empSatisfactionTracker.repository.SurveyResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,9 @@ public class SurveyService {
 
     @Autowired
     private SurveyRepository surveyRepository;
+
+    @Autowired
+    private SurveyResponseRepository surveyResponseRepository;
 
     public Optional<SurveyModel> getSurveyById(String id) {
         return surveyRepository.findById(id);
@@ -32,5 +36,7 @@ public class SurveyService {
         else throw new RuntimeException("Error while saving the survey.");
     }
 
-
+    public Optional<SurveyResponse> getResponses(String surveyId) {
+        return surveyResponseRepository.findById(surveyId);
+    }
 }

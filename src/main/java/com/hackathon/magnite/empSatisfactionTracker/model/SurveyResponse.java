@@ -4,17 +4,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Element {
+@Document
+public class SurveyResponse {
 
-    private String type;
-    private String name;
-    private String title;
-    private List<Choice> choices;
+    private String surveyId;
+    private List<Map<String, Object>> surveyModelList;
 }

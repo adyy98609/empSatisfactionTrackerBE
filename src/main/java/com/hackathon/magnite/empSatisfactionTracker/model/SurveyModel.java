@@ -21,12 +21,7 @@ public class SurveyModel {
         private String logoHeight;
         private String logoFit;
         private String logoPosition;
-        private List<CompletedHtmlOnCondition> completedHtmlOnCondition;
-        private List<Element> elements;
-        private boolean showPrevButton;
-        private String questionsOnPageMode;
-        private boolean showQuestionNumbers;
-        private String widthMode;
-        private String width;
+        private String title;
+        private List<Page> pages;
 
 }
